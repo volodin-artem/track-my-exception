@@ -1,0 +1,26 @@
+@import "../../../index.sass"
+.welcome
+  padding-top: 50px
+  max-width: 48rem
+  font:
+    family: $main-font
+    size: 3.5rem
+    weight: bold
+  color: whitesmoke
+  text-align: center
+  line-height: 1
+  letter-spacing: .1px
+  .error
+    @include highlight("error")
+  .green
+    @include highlight("success")
+  .spacer
+    padding: 40px 0
+    color: $text-main-color
+    font:
+      size: 1rem
+      weight: normal
+
+@media (max-device-width: $mobile-width)
+  .welcome
+    font-size: 2rem

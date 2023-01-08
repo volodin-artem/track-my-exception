@@ -1,0 +1,22 @@
+.nav-bar {
+  display: flex;
+  height: 100%;
+  padding: 10px 0;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(38, 38, 38);
+}
+
+.links-holder {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-device-width: 480px) {
+  .links-holder {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=nav-bar.css.map */

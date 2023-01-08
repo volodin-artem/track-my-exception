@@ -3,16 +3,16 @@ const path = require('path');
 module.exports = {
   devtool: 'eval-source-map',
   mode: "development",
-  entry: "./src/index.js",
+  entry: "./src/index.jsx",
   output: {
     path: path.resolve(__dirname + '/public'),
-    filename: "bundle.js"
+    filename: "bundle.js",
   },
   devServer: {
     historyApiFallback: true,
     port: 1337,
     open: true,
-    host: 'localhost'
+    host: 'localhost',
   },
   module: {
     rules: [
@@ -22,17 +22,17 @@ module.exports = {
         loader: "babel-loader",
         options: {
           presets: ["@babel/preset-env", "@babel/preset-react"],
-          plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import"]
-        }
+          plugins: ["@babel/plugin-transform-runtime", "@babel/plugin-syntax-dynamic-import"],
+        },
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           "style-loader",
           "css-loader",
-          "sass-loader"
-        ]
-      }
-    ]
-  }
+          "sass-loader",
+        ],
+      },
+    ],
+  },
 };
