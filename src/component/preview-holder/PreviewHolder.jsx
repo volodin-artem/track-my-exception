@@ -6,11 +6,10 @@ function PreviewHolder(props) {
     <div className="center preview-holder">
       <div style={{ display: "inline-block" }}>
         <div className="left-holder">
-          You’ve Got to Know about an Error to Fix It. Don't waste expensive time checking server
-          logs every time something happens.View more screenshots and features
+          {props.text}
         </div>
         <div className="right-holder">
-          <img src="https://www.muscula.com/static/dashboard-5fa6aace60014a206124229f885e28ac.webp" />
+          {props.img}
         </div>
       </div>
     </div>
