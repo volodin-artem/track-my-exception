@@ -7,7 +7,6 @@ function ErrorPage(props) {
   const error = useRouteError();
   return (
     <>
-      s
       <NavBar />
       <div className="center">{"Error! " + error.statusText}</div>
     </>

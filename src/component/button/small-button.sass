@@ -1,0 +1,12 @@
+@import "src/index.sass"
+
+.small-button
+  @include button(rgb(122 163 59))
+  font-size: 1rem
+  &.success
+    background-color: $success-color
+  &.white-border
+    border: whitesmoke 1px solid
+    &:hover
+      @include button(white)
+      color: $success-color
