@@ -68,6 +68,27 @@ function Welcome(props) {
           <MiniHolder desc="Use plugins for React, Angular, Vue, WordPress" header="Plugins" />
           <MiniHolder desc="Bolster your security" header="Security" />
         </div>
+
+        <PreviewHolder
+          classes="green"
+          text={(
+            <>
+              <h1>Get free trial.</h1>
+              No credit card needed & free plan available!
+              Start with a free plan and upgrade any time.
+              View pricing plans
+            </>
+        )}
+        />
+        <PreviewHolder
+          classes="green"
+          text={(
+            <>
+              <h1>Features.</h1>
+              Show me more!
+            </>
+        )}
+        />
       </div>
     </>
   );
