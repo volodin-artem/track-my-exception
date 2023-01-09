@@ -21,6 +21,18 @@
       size: 1.25rem
       weight: normal
 
+@function goGrid($max-cols-grid)
+  @return repeat($max-cols-grid, 1fr)
+
+.grid
+  display: grid
+  grid-template-columns: goGrid(3)
+  &.gap
+    gap: 1rem
+
 @media (max-device-width: $mobile-width)
   .welcome
     font-size: 2rem
+  $max-cols-grid: 2
+  .grid
+    grid-template-columns: goGrid(2)

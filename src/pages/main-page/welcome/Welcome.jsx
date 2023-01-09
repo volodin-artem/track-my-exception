@@ -3,6 +3,7 @@ import "./welcome.sass";
 import "../../../component/button/small-button.sass";
 import DefaultButton from "../../../component/button/DefaultButton.jsx";
 import PreviewHolder from "../../../component/preview-holder/PreviewHolder.jsx";
+import MiniHolder from "../mini-holder/MiniHolder.jsx";
 
 function Welcome(props) {
   return (
@@ -51,9 +52,21 @@ function Welcome(props) {
       />
       <div className="center welcome">
         <div className="spacer">
-          <h1>With Muscula you can</h1>
+          <h1>With us you can</h1>
           get free, business and selfhosted plans that offer a range of
           features
+        </div>
+      </div>
+      <div className="center">
+        <div className="grid col3 gap">
+          <MiniHolder desc="Receive notifications about errors" header="Notifications" />
+          <MiniHolder desc="Receive uptime checks" header="Checks" />
+          <MiniHolder desc="Enhance value for clients" header="Value" />
+          <MiniHolder desc="Improve the user experience" header="Experience" />
+          <MiniHolder desc="Increase page rank" header="Rank" />
+          <MiniHolder desc="Use JavaScript, PHP, C#, Java" header="Languages" />
+          <MiniHolder desc="Use plugins for React, Angular, Vue, WordPress" header="Plugins" />
+          <MiniHolder desc="Bolster your security" header="Security" />
         </div>
       </div>
     </>

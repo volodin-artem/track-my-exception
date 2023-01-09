@@ -22,9 +22,20 @@
   font-weight: normal;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid.gap {
+  gap: 1rem;
+}
+
 @media (max-device-width: 480px) {
   .welcome {
     font-size: 2rem;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
