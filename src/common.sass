@@ -1,5 +1,8 @@
 @import "src/index.sass"
 
+html
+  scroll-behavior: smooth
+
 h1
   font-size: 2.5rem
   color: whitesmoke
@@ -19,6 +22,31 @@ h1
 
 .def-size
   font-size: 1rem
+
+.f-screen
+  width: 100vw
+  height: 100vh
+
+.background
+  background-image: url("../public/image/background.jpg")
+
+.flex
+  display: flex
+
+.justify-center
+  justify-content: center
+
+.flex-align-center
+  align-items: center
+
+.bold
+  font-weight: bold
+
+.vert-align
+  vertical-align: middle
+
+.space-between
+  justify-content: space-between
 
 @media (max-device-width: $mobile-width)
   html

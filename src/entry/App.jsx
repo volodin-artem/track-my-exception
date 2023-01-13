@@ -7,13 +7,17 @@ import { BrowserRouter as Router, createBrowserRouter } from "react-router-dom";
 import MainPage from "../pages/main-page/MainPage.jsx";
 import Error from "../pages/error/ErrorPage.jsx";
 import Features, { href as featuresHref } from "../pages/features/Features.jsx";
+import Register, { href as registerHref } from "../pages/register/Register.jsx";
+import Login, { href as loginHref } from "../pages/login/Login.jsx";
 
 function App(props) {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <>
         <Route path="/" element={<MainPage />} errorElement={<Error />} />
-        <Route index path={featuresHref} element={<Features />} />
+        <Route path={featuresHref} element={<Features />} />
+        <Route path={loginHref} element={<Login />} />
+        <Route path={registerHref} element={<Register />} />
       </>,
     ),
   );

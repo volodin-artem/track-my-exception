@@ -8,11 +8,15 @@ $error-color: #E60F1E
 $success-color: #82B139
 $zero-to-nine-numbers: 0,1,2,3,4,5,6,7,8,9
 
+$types:(success: $success-color, error: $error-color)
 @mixin highlight($type)
-  @if($type == "error")
-    color: $error-color
-  @else if($type == "success")
-    color: $success-color
+  @each $tag, $color in $types
+    @if($type == $tag)
+      color: $color
+
+@each $type, $color in $types
+  .highlight-#{$type}
+    color: $color
 
 @mixin button($bc-hover)
   border-radius: 5px

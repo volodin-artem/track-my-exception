@@ -1,3 +1,11 @@
+.highlight-success {
+  color: #82B139;
+}
+
+.highlight-error {
+  color: #E60F1E;
+}
+
 .welcome {
   padding-top: 50px;
   max-width: 48rem;
