@@ -31,3 +31,8 @@ $types:(success: $success-color, error: $error-color)
   transition: all .3s ease-in-out
   &:hover
     background-color: $bc-hover !important
+
+@mixin highlight-input($type, $elem)
+  @each $tag, $color in $types
+    @if($type == $tag)
+      $elem: (border: $color 1px solid)
