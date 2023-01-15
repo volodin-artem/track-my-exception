@@ -6,11 +6,12 @@ export default class PasswordValidator extends Validator {
     super(password);
   }
 
-  _minLength = 7;
+  #minLength = 7;
 
   validate() {
-    super.validate();
-    const password = this.value;
-    if (password.length < this._minLength) return new ValidationError("Length is less then required");
+    return super.validate((password) => {
+      if (password.length < this.#minLength) return new ValidationError("Length is less then required");
+      return true;
+    });
   }
 }

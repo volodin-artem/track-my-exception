@@ -5,10 +5,9 @@ export default class EmailValidator extends Validator {
     super(email);
   }
 
-  _possibleEmails = ['@gmail.com', '@mail.ru', '@yandex.ru'];
+  #possibleEmails = ['@gmail.com', '@mail.ru', '@yandex.ru'];
 
   validate() {
-    super.validate();
-    return this._possibleEmails.find((email) => this.value.endsWith(email));
+    return super.validate((value) => this.#possibleEmails.find((email) => value.endsWith(email)));
   }
 }

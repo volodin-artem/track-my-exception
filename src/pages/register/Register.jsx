@@ -86,7 +86,6 @@ function Register(props) {
               const isEmailValid = new EmailValidator(email).validate();
               const isPasswordValid = new PasswordValidator(password).validate();
               if (isPasswordValid instanceof Error) {
-                alert(1);
               }
               if (!isEmailValid) {
                 console.log('Email invalid!');

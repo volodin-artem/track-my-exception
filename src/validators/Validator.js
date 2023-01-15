@@ -3,7 +3,7 @@ export default class Validator {
     this.value = value;
   }
 
-  validate() {
-    return this.value.trim();
+  validate(predicate) {
+    return predicate(this.value);
   }
 }
