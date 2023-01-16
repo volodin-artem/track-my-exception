@@ -28,7 +28,7 @@ function Login(props) {
   );
 }
 
-// todo fix all links component to export object with href dude
-const href = "/login";
-export { href };
+export const route = {
+  href: "/login",
+};
 export default Login;

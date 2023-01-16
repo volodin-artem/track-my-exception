@@ -3,7 +3,7 @@ import "./welcome.sass";
 import "../../../component/button/small-button.sass";
 import DefaultButton from "../../../component/button/DefaultButton.jsx";
 import PreviewHolder from "../../../component/preview-holder/PreviewHolder.jsx";
-import MiniHolder from "../mini-holder/MiniHolder.jsx";
+import MiniHolder from "../../../component/mini-holder/MiniHolder.jsx";
 
 function Welcome(props) {
   return (

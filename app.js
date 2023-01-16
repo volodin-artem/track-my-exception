@@ -34,9 +34,8 @@ app.use((req, res, next) => {
 });
 app.get('/*', (req, res, next) => {
   if (req.path.includes('api')) {
-    next();
-  }
-  return res.sendFile(path.join(__dirname, '/public/index.html'));
+    return next();
+  } return res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 app.get('/api/user/:userId', (req, res) => {
   res.set({
@@ -52,15 +51,30 @@ app.get('/api/user/:userId', (req, res) => {
     res.json(user);
   });
 });
-app.post('/api/post/user', express.json({ type: '*/*' }), (req, res) => {
+app.post('/api/post/user', (req, res) => {
   res.contentType("application/json");
   const { email, password } = req.query;
   const token = randomToken.create("abcdefghijklmnopqrstuvwxzyABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")(16);
   Token.create({ Value: token }).then((tokenPostResult) => {
     User.create({ Email: email, Password: password, TokenId: tokenPostResult.Id }).then((user) => {
-      if (user) res.json(user);
+      if (user) res.json({ ...user.dataValues, token });
       else res.json({ error: "User not created" });
     });
   });
+});
+app.get('/api/user', (req, res, next) => {
+  const { token } = req.query;
+  if (!token) next();
+  else {
+    Token.findAll({ raw: true }).then((tokens) => {
+      const validToken = tokens.find((tokenItem) => tokenItem.Value === token);
+      if (!validToken) {
+        res.json({ error: "Not found!" });
+        next();
+        return;
+      }
+      User.findOne({ where: { TokenId: validToken.Id } }).then((user) => res.json({ ...user.dataValues, token }));
+    });
+  }
 });
 app.listen(port, () => console.log('Server is started'));

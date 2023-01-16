@@ -7,6 +7,7 @@ function Documentation(props) {
   );
 }
 
-const href = "/documentation";
-export { href };
+export const route = {
+  href: "/documentation",
+};
 export default Documentation;

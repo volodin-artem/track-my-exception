@@ -7,6 +7,7 @@ function Blog(props) {
   );
 }
 
-const href = "/blog";
-export { href };
+export const route = {
+  href: "/blog",
+};
 export default Blog;

@@ -7,6 +7,7 @@ function Contact(props) {
   );
 }
 
-const href = "/contact";
-export { href };
+export const route = {
+  href: "/contact",
+};
 export default Contact;

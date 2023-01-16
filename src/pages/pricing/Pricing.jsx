@@ -7,6 +7,7 @@ function Pricing(props) {
   );
 }
 
-const href = "/pricing";
-export { href };
+export const route = {
+  href: "/pricing",
+};
 export default Pricing;

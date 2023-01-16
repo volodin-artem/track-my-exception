@@ -1,5 +1,5 @@
 import Validator from "./Validator.js";
-import ValidationError from "./ValidationError.js";
+import ValidationError from "../custom-error/ValidationError.js";
 
 export default class PasswordValidator extends Validator {
   constructor(password) {

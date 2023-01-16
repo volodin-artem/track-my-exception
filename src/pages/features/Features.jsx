@@ -162,6 +162,7 @@ function Features(props) {
   );
 }
 
-const href = "/features";
-export { href };
+export const route = {
+  href: "/features",
+};
 export default Features;
