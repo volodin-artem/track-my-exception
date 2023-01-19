@@ -78,7 +78,7 @@ function MainUserPage(props) {
       <div className="header">{selectedProject?.Name}</div>
       <div className="errors">
         {(selectedProject.errors?.length) ? selectedProject.errors.map((error) => (
-          <SyntaxHighlighter language="javascript" style={colorSchema}>
+          <SyntaxHighlighter language="javascript" style={colorSchema} showLineNumbers wrapLongLines>
             {error.Body}
           </SyntaxHighlighter>
         )) : <p className="highlight-success def-family def-size">Great! No errors found in current project!</p>}
@@ -119,7 +119,7 @@ function MainUserPage(props) {
           <DefaultButton text="Add new project" onclick={(e) => { setSelectedProject({}); }} />
         </div>
       </div>
-      <div className="flex col justify-center">
+      <div className="flex col justify-center" style={{ paddingLeft: "13rem" }}>
         {
           Object.keys(selectedProject).length ? projectSelected : projectNotSelected
         }

@@ -45,7 +45,7 @@ function Documentation(props) {
               img={(
                 <div className="def-family def-size" style={{ padding: "1rem" }}>
                   Add this code into your HTML page
-                  <SyntaxHighlighter language="html" style={colorSchema}>
+                  <SyntaxHighlighter language="html" style={colorSchema} showLineNumbers>
                     {`<script src=${configuration.getFettyPath}></script>`}
                   </SyntaxHighlighter>
                 </div>
@@ -61,7 +61,7 @@ function Documentation(props) {
               img={(
                 <div style={{ padding: "1rem" }} className="def-size def-family">
                   Add this code into your index script and configure it
-                  <SyntaxHighlighter language="javascript" style={colorSchema}>
+                  <SyntaxHighlighter language="javascript" style={colorSchema} showLineNumbers>
                     const Fetty = new Fetty();
                     Fetty.goTrack("YOUR_API_KEY_IN_PROJECTS_PAGE");
                   </SyntaxHighlighter>

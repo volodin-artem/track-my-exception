@@ -34,21 +34,20 @@ function Welcome(props) {
             <h1>You’ve Got to Know about an Error to Fix It.</h1>
             {' '}
             Don't waste expensive time checking server
-            logs every time something happens.View more screenshots and features
+            logs every time something happens.
           </>
       )}
-        img={<img src="https://www.muscula.com/static/dashboard-5fa6aace60014a206124229f885e28ac.webp" />}
+        img={<img src="/image/main-plan.png" />}
       />
       <PreviewHolder
         text={(
           <>
-            <h1>You’ve Got to Know about an Error to Fix It.</h1>
+            <h1>How it works.</h1>
             {' '}
-            Don't waste expensive time checking server
-            logs every time something happens.View more screenshots and features
+            Check out documentation to learn how work with us
           </>
         )}
-        img={<img src="https://www.muscula.com/static/dashboard-5fa6aace60014a206124229f885e28ac.webp" />}
+        img={<img src="/image/documentation.png" />}
       />
       <div className="center welcome">
         <div className="spacer">
@@ -64,7 +63,7 @@ function Welcome(props) {
           <MiniHolder desc="Enhance value for clients" header="Value" />
           <MiniHolder desc="Improve the user experience" header="Experience" />
           <MiniHolder desc="Increase page rank" header="Rank" />
-          <MiniHolder desc="Use JavaScript, PHP, C#, Java" header="Languages" />
+          <MiniHolder desc="Use JavaScript or Typescript" header="Languages" />
           <MiniHolder desc="Use plugins for React, Angular, Vue, WordPress" header="Plugins" />
           <MiniHolder desc="Bolster your security" header="Security" />
         </div>
@@ -73,10 +72,9 @@ function Welcome(props) {
           classes="green"
           text={(
             <>
-              <h1>Get free trial.</h1>
+              <h1>We are free</h1>
               No credit card needed & free plan available!
-              Start with a free plan and upgrade any time.
-              View pricing plans
+              Start with a free plan forever.
             </>
         )}
         />
@@ -85,7 +83,7 @@ function Welcome(props) {
           text={(
             <>
               <h1>Features.</h1>
-              Show me more!
+              We got cool tracking system for your JS projects
             </>
         )}
         />

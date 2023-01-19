@@ -1,8 +1,10 @@
 @import "src/index.sass"
 
 .sider
+  position: fixed
   width: 12rem
-  height: 100%
+  bottom: 0
+  top: 0
   padding: 1rem
   background-color: $secondary-color
   .project
@@ -49,13 +51,10 @@
     background-color: $light-gray
 
 .errors
-  *
-    display: block
-    max-width: 100rem
-    word-wrap: break-word
-    word-break: break-all
-    overflow: auto
   .error
     background-color: $light-gray
     padding: 1rem
     font-family: Consolas
+
+body
+  overflow-x: hidden
