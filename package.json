@@ -20,6 +20,7 @@
     "react-redux": "^8.0.5",
     "react-router": "^6.6.1",
     "react-router-dom": "^6.6.1",
+    "react-syntax-highlighter": "^15.5.0",
     "redux": "^4.2.0",
     "sequelize": "^6.28.0",
     "tedious": "^15.1.2"

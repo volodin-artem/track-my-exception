@@ -9,6 +9,7 @@ const json = express.json();
 const Sequelize = require('sequelize');
 const path = require("path");
 const { initModels } = require("./models/init-models.js");
+const Fetty = require("./fettyjs/index.js");
 
 const { Op } = Sequelize;
 const sequelize = new Sequelize(
@@ -21,7 +22,9 @@ const sequelize = new Sequelize(
   },
 );
 
-const { User, Token, Error } = initModels(sequelize);
+const {
+  User, Token, Error, Project,
+} = initModels(sequelize);
 sequelize.sync().then(() => {
   console.log('SQL is connected');
 });
@@ -35,8 +38,11 @@ app.use((req, res, next) => {
 app.get('/*', (req, res, next) => {
   if (req.path.includes('api')) {
     return next();
-  } return res.sendFile(path.join(__dirname, '/public/index.html'));
+  } res.sendFile(path.join(__dirname, '/public/index.html'));
 });
+
+app.listen(port, () => console.log('Server is started'));
+
 app.get('/api/user/:userId', (req, res) => {
   res.set({
     "Content-Type": "application/json",
@@ -77,4 +83,51 @@ app.get('/api/user', (req, res, next) => {
     });
   }
 });
-app.listen(port, () => console.log('Server is started'));
+
+app.post('/api/post/project', (req, res, next) => {
+  const { userIdCreator, name } = req.query;
+  if (!userIdCreator || !name) next();
+  else {
+    const token = randomToken.create("abcdefghijklmnopqrstuvwxzyABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")(16);
+    Project.create({ UserIdCreator: userIdCreator, Name: name, TokenAPI: token })
+      .then((response) => {
+        Error.findAll({ where: { ProjectId: response.Id } }).then((errors) => {
+          res.json({ ...response.dataValues, errors });
+        });
+      });
+  }
+});
+
+app.get('/api/project', (req, res, next) => {
+  const { userId } = req.query;
+  if (!userId) next();
+  else {
+    Project.findAll({ where: { UserIdCreator: userId }, raw: true }).then((response) => {
+      const newResponse = response.map((project) => {
+        const projectCopy = project;
+        return Error.findAll({ where: { ProjectId: project.Id } }).then((errors) => {
+          projectCopy.errors = errors.map((item) => item.dataValues);
+          return projectCopy;
+        });
+      });
+      Promise.all(newResponse).then((result) => res.json(result));
+    });
+  }
+});
+app.post('/api/post/error', (req, res, next) => {
+  const { token, errorBody } = req.query;
+  if (!token || !errorBody) next();
+  else {
+    Project.findOne({ where: { TokenAPI: token } }).then((project) => {
+      User.findByPk(project.UserIdCreator).then((user) => {
+        Error.create({ TokenId: user.TokenId, Body: errorBody, ProjectId: project.Id })
+          .then((error) => {
+            res.json(error);
+          });
+      });
+    });
+  }
+});
+app.get('/api/fetty.js', (req, res) => {
+  res.send(Fetty.toString());
+});

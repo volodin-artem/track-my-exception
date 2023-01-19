@@ -7,10 +7,11 @@ import { BrowserRouter as Router, createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import MainPage from "../pages/main-page/MainPage.jsx";
 import Error from "../pages/error/ErrorPage.jsx";
-import Features, { route as featuresHref } from "../pages/features/Features.jsx";
-import Register, { route as registerHref } from "../pages/register/Register.jsx";
-import Login, { route as loginHref } from "../pages/login/Login.jsx";
-import MainUserPage, { route as profileHref } from "../pages/user/main/MainUserPage.jsx";
+import Features, { route as features } from "../pages/features/Features.jsx";
+import Register, { route as register } from "../pages/register/Register.jsx";
+import Login, { route as login } from "../pages/login/Login.jsx";
+import MainUserPage, { route as profile } from "../pages/user/main/MainUserPage.jsx";
+import Documentation, { route as documentation } from "../pages/documentation/Documentation.jsx";
 import token from "../user.js";
 
 function App(props) {
@@ -18,11 +19,12 @@ function App(props) {
     createRoutesFromElements(
       <>
         <Route path="/" element={<MainPage />} errorElement={<Error />} />
-        <Route path={featuresHref.href} element={<Features />} />
-        <Route path={loginHref.href} element={<Login />} />
-        <Route path={registerHref.href} element={<Register />} />
+        <Route path={features.href} element={<Features />} />
+        <Route path={login.href} element={<Login />} />
+        <Route path={register.href} element={<Register />} />
+        <Route path={documentation.href} element={<Documentation />} />
         <Route
-          path={profileHref.href}
+          path={profile.href}
           element={<MainUserPage />}
         />
       </>,

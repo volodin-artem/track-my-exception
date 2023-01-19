@@ -3,4 +3,5 @@ export default {
   api: {
     url: "http://localhost:3000/api",
   },
+  getFettyPath: "http://localhost:3000/api/fetty.js",
 };

@@ -1,16 +1,17 @@
 const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
+
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('Token', {
     Id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
     },
     Value: {
       type: DataTypes.STRING(50),
-      allowNull: false
-    }
+      allowNull: false,
+    },
   }, {
     sequelize,
     tableName: 'Token',
@@ -22,8 +23,8 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         fields: [
           { name: "Id" },
-        ]
+        ],
       },
-    ]
+    ],
   });
 };

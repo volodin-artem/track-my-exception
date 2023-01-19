@@ -1,28 +1,29 @@
 const Sequelize = require('sequelize');
-module.exports = function(sequelize, DataTypes) {
+
+module.exports = function (sequelize, DataTypes) {
   return sequelize.define('User', {
     Id: {
       autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true
+      primaryKey: true,
     },
     TokenId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: 'Token',
-        key: 'Id'
-      }
+        key: 'Id',
+      },
     },
     Email: {
       type: DataTypes.STRING(50),
-      allowNull: false
+      allowNull: false,
     },
     Password: {
       type: DataTypes.STRING(50),
-      allowNull: false
-    }
+      allowNull: false,
+    },
   }, {
     sequelize,
     tableName: 'User',
@@ -34,8 +35,8 @@ module.exports = function(sequelize, DataTypes) {
         unique: true,
         fields: [
           { name: "Id" },
-        ]
+        ],
       },
-    ]
+    ],
   });
 };
