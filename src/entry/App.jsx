@@ -12,6 +12,7 @@ import Register, { route as register } from "../pages/register/Register.jsx";
 import Login, { route as login } from "../pages/login/Login.jsx";
 import MainUserPage, { route as profile } from "../pages/user/main/MainUserPage.jsx";
 import Documentation, { route as documentation } from "../pages/documentation/Documentation.jsx";
+import Contact, { route as contact } from "../pages/contact/Contact.jsx";
 import token from "../user.js";
 
 function App(props) {
@@ -23,6 +24,7 @@ function App(props) {
         <Route path={login.href} element={<Login />} />
         <Route path={register.href} element={<Register />} />
         <Route path={documentation.href} element={<Documentation />} />
+        <Route path={contact.href} element={<Contact />} />
         <Route
           path={profile.href}
           element={<MainUserPage />}

@@ -1,6 +1,7 @@
 import React from 'react';
 import "./footer.sass";
 import { route as contactHref } from "../../pages/contact/Contact.jsx";
+import { route as docHref } from "../../pages/documentation/Documentation.jsx";
 
 function Footer(props) {
   return (
@@ -10,8 +11,8 @@ function Footer(props) {
           Copyright ©. All rights reserved.
         </div>
         <div>
-          <a href={contactHref.href}>Privacy Policy</a>
-          <a href={contactHref.href}>Terms of Service</a>
+          <a href={contactHref.href}>Contact with us</a>
+          <a href={docHref.href}>Documentation</a>
         </div>
       </div>
     </div>

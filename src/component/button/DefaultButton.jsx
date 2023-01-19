@@ -3,7 +3,10 @@ import "./default-button.css";
 
 function DefaultButton(props) {
   return (
-    <a onClick={props.onclick || null} className={`${props.classes ? props.classes.slice(',').join(' ') : "button"}`} href={props.href}>{props.text}</a>
+    <a onClick={props.onclick || null} className={`${props.classes ? props.classes.slice(',').join(' ') : "button"}`} href={props.href}>
+      {props.icon}
+      {props.text}
+    </a>
   );
 }
 

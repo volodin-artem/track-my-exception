@@ -24,7 +24,7 @@ function Welcome(props) {
           to conveniently collect and analyze errors on a website or application.
         </div>
         <div>
-          <DefaultButton text="Yes! Help me save time" classes={["small-button", "success"]} href="/pricing" />
+          <DefaultButton text="Yes! Help me save time" classes={["small-button", "success"]} href="/register" />
           <DefaultButton text="Contact to us" classes={["small-button", "white-border"]} href="/contact" />
         </div>
       </div>

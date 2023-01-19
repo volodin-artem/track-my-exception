@@ -1,5 +1,0 @@
-const SET_PROJECT_PROFILE = 'SET_PROJECT_PROFILE';
-
-export default {
-  SET_PROJECT_PROFILE,
-};

@@ -14,13 +14,13 @@ function Documentation(props) {
       <NavBar />
       <div className="center">
         <div className="flex flex-align-center column allow-counter">
-          <div className="title">
+          <div className="title text-center-align">
             <p>Documentation</p>
             <p>Learn how start tracking errors and exceptions with us!</p>
           </div>
           <div style={{ width: "100%" }}>
             <PreviewHolder
-              img={<img src="/image/login-register-button.png" />}
+              img={<img src="/image/login-register-button.png" style={{ padding: "5rem" }} />}
               text={(
                 <div>
                   <h1>Register an account</h1>

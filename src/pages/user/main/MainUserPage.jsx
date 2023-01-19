@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { darcula as colorSchema } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import "./main-page.sass";
 import { useNavigate } from "react-router";
-import { connect, useDispatch } from "react-redux";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { useQuery } from "react-query";
 import user from "../../../user.js";
@@ -10,7 +9,6 @@ import "../../login/login.sass";
 import Logo from "../../../component/logo/Logo.jsx";
 import DefaultButton from "../../../component/button/DefaultButton.jsx";
 import configuration from "../../../configuration.js";
-import { changeProject } from "../../../redux/actions/actions.js";
 import ValidationError from "../../../custom-error/ValidationError.js";
 
 function MainUserPage(props) {
@@ -89,11 +87,12 @@ function MainUserPage(props) {
         <p className="def-family def-size def-color" style={{ lineHeight: "2rem" }}>
           Here is your API key:
           <span style={{ color: "lightskyblue" }}>
-            {' '}
-            {selectedProject.TokenAPI}
+            <span className="concentrate">
+              {" " + selectedProject.TokenAPI}
+            </span>
           </span>
           <div>
-            <a href="/documentation" className="highlight-success">How to track errors in this project? Check out documentation!</a>
+            <a href="/documentation" className="highlight-success concentrate">How to track errors in this project? Check out documentation!</a>
           </div>
         </p>
       </div>

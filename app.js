@@ -28,8 +28,8 @@ const {
 sequelize.sync().then(() => {
   console.log('SQL is connected');
 });
+app.use(express.static(path.join(__dirname, 'public')));
 app.use((req, res, next) => {
-  express.static(path.join(__dirname, 'public'));
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS, POST, PUT');
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
@@ -38,7 +38,8 @@ app.use((req, res, next) => {
 app.get('/*', (req, res, next) => {
   if (req.path.includes('api')) {
     return next();
-  } res.sendFile(path.join(__dirname, '/public/index.html'));
+  }
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port, () => console.log('Server is started'));
@@ -124,6 +125,23 @@ app.post('/api/post/error', (req, res, next) => {
           .then((error) => {
             res.json(error);
           });
+      });
+    });
+  }
+});
+app.get('/api/user', (req, res, next) => {
+  const { password, email } = req.query;
+  if (!password || !email) next();
+  else {
+    User.findOne({ where: { Email: email, Password: password } }).then((user) => {
+      if (!user) {
+        res.json({ error: "Not found" });
+        next();
+        return;
+      }
+      Token.findOne({ where: { Id: user.TokenId } }).then((token) => {
+        if (user) res.json({ ...user.dataValues, token: token.Value });
+        else res.json({ error: "Not found" });
       });
     });
   }
