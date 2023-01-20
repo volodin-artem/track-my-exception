@@ -2,7 +2,6 @@ import React from 'react';
 import { darcula as colorSchema } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import NavBar from "../../component/nav-bar/NavBar.jsx";
 import Footer from "../../component/footer/Footer.jsx";
-import MiniHolder from "../../component/mini-holder/MiniHolder.jsx";
 import PreviewHolder from "../../component/preview-holder/PreviewHolder.jsx";
 import "./documentation.sass";
 import SyntaxHighlighter from "react-syntax-highlighter";
@@ -25,7 +24,8 @@ function Documentation(props) {
                 <div>
                   <h1>Register an account</h1>
                   {' '}
-                  To use all functionality you need to register for an account. Start with a free plan and upgrade any time.
+                  To use all functionality you need to register for an account. Start with a free plan and upgrade any
+                  time.
                   No credit card required. Click the Register button in the top right corner of the website.
                 </div>
               )}
@@ -36,7 +36,8 @@ function Documentation(props) {
                 <div>
                   <h1>Create a new project</h1>
                   {' '}
-                  To use all functionality you need to register for an account. Start with a free plan and upgrade any time.
+                  To use all functionality you need to register for an account. Start with a free plan and upgrade any
+                  time.
                   No credit card required. Click the Register button in the top right corner of the website."
                 </div>
               )}
@@ -49,7 +50,7 @@ function Documentation(props) {
                     {`<script src=${configuration.getFettyPath}></script>`}
                   </SyntaxHighlighter>
                 </div>
-)}
+              )}
               text={(
                 <div>
                   <h1>Add FettyJS in your HTML as first script in your document</h1>
@@ -62,8 +63,7 @@ function Documentation(props) {
                 <div style={{ padding: "1rem" }} className="def-size def-family">
                   Add this code into your index script and configure it
                   <SyntaxHighlighter language="javascript" style={colorSchema} showLineNumbers>
-                    const Fetty = new Fetty();
-                    Fetty.goTrack("YOUR_API_KEY_IN_PROJECTS_PAGE");
+                    {`const fetty = new Fetty();\nfetty.goTrack("YOUR_API_KEY_IN_PROJECTS_PAGE");`}
                   </SyntaxHighlighter>
                 </div>
               )}
@@ -74,7 +74,7 @@ function Documentation(props) {
               )}
             />
             <PreviewHolder
-              img={<></>}
+              img={<img src="https://media.tenor.com/yiwQnhndwa0AAAAC/cool-shades-on.gif" />}
               text={(
                 <div>
                   <h1>Done! You're actually now tacking your exceptions!</h1>

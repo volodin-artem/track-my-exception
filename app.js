@@ -13,12 +13,12 @@ const Fetty = require("./fettyjs/index.js");
 
 const { Op } = Sequelize;
 const sequelize = new Sequelize(
-  "TrackMyException",
-  "admin",
-  "eriksundberg1337",
+  "Trackmyexception",
+  "dedushka_SQLLogin_1",
+  "1a4qhiyn43",
   {
     dialect: "mssql",
-    host: "HOME-PC",
+    host: "Trackmyexception.mssql.somee.com",
   },
 );
 

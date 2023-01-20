@@ -1,9 +1,7 @@
 import "../index.css";
 import React from 'react';
-import {
-  createRoutesFromElements, Route, RouterProvider, Routes,
-} from "react-router";
-import { BrowserRouter as Router, createBrowserRouter } from "react-router-dom";
+import { createRoutesFromElements, Route, RouterProvider } from "react-router";
+import { createBrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import MainPage from "../pages/main-page/MainPage.jsx";
 import Error from "../pages/error/ErrorPage.jsx";
@@ -13,7 +11,6 @@ import Login, { route as login } from "../pages/login/Login.jsx";
 import MainUserPage, { route as profile } from "../pages/user/main/MainUserPage.jsx";
 import Documentation, { route as documentation } from "../pages/documentation/Documentation.jsx";
 import Contact, { route as contact } from "../pages/contact/Contact.jsx";
-import token from "../user.js";
 
 function App(props) {
   const router = createBrowserRouter(

@@ -9,7 +9,6 @@ import "../../login/login.sass";
 import Logo from "../../../component/logo/Logo.jsx";
 import DefaultButton from "../../../component/button/DefaultButton.jsx";
 import configuration from "../../../configuration.js";
-import ValidationError from "../../../custom-error/ValidationError.js";
 
 function MainUserPage(props) {
   const [projectName, setProjectName] = useState("");
@@ -92,7 +91,10 @@ function MainUserPage(props) {
             </span>
           </span>
           <div>
-            <a href="/documentation" className="highlight-success concentrate">How to track errors in this project? Check out documentation!</a>
+            <a href="/documentation" className="highlight-success concentrate">
+              How to track errors in this project?
+              Check out documentation!
+            </a>
           </div>
         </p>
       </div>
@@ -103,7 +105,9 @@ function MainUserPage(props) {
     <div className="f-screen flex">
       <img className="diag-back" src="image/charts-diagrams.png" alt="" onDragStart={(e) => e.preventDefault()} />
       <div className="sider">
-        <Logo />
+        <div style={{ marginLeft: "-1rem" }}>
+          <Logo />
+        </div>
         <div style={{ paddingTop: "1rem" }}>
           {projects.map((item, index) => (
             <DefaultButton
@@ -116,10 +120,17 @@ function MainUserPage(props) {
               }}
             />
           ))}
-          <DefaultButton text="Add new project" onclick={(e) => { setSelectedProject({}); }} />
+          <div className="flex justify-center">
+            <DefaultButton
+              text="Add new project"
+              onclick={(e) => {
+                setSelectedProject({});
+              }}
+            />
+          </div>
         </div>
       </div>
-      <div className="flex col justify-center" style={{ paddingLeft: "13rem" }}>
+      <div className="flex col justify-center" style={{ paddingLeft: "16rem" }}>
         {
           Object.keys(selectedProject).length ? projectSelected : projectNotSelected
         }
@@ -127,6 +138,7 @@ function MainUserPage(props) {
     </div>
   );
 }
+
 export default MainUserPage;
 export const route = {
   href: "/profile",

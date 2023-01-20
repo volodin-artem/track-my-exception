@@ -10,10 +10,13 @@
   text-align: center
   line-height: 1
   letter-spacing: .1px
+
   .error
     @include highlight("error")
+
   .green
     @include highlight("success")
+
   .spacer
     padding: 40px 0
     color: $text-main-color
@@ -27,6 +30,7 @@
 .grid
   display: grid
   grid-template-columns: goGrid(3)
+
   &.gap
     gap: 1rem
 

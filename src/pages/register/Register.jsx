@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "../login/login.sass";
 import { useQuery } from "react-query";
-import { useNavigate, Red } from "react-router";
+import { useNavigate } from "react-router";
 import Logo from "../../component/logo/Logo.jsx";
 import DefaultButton from "../../component/button/DefaultButton.jsx";
 import Checkbox from "../../component/checkbox/Checkbox.jsx";
@@ -120,6 +120,7 @@ function Register(props) {
 function checkPasswords(password1, password2, onequal, onerror) {
   return password1 === password2 ? onequal() : onerror();
 }
+
 export const route = {
   href: "/register",
 };

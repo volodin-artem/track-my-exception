@@ -14,4 +14,5 @@ function ErrorPage(props) {
     </>
   );
 }
+
 export default ErrorPage;

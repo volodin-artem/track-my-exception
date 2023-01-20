@@ -2,11 +2,11 @@ import Validator from "./Validator.js";
 import ValidationError from "../custom-error/ValidationError.js";
 
 export default class PasswordValidator extends Validator {
+  #minLength = 7;
+
   constructor(password) {
     super(password);
   }
-
-  #minLength = 7;
 
   validate() {
     return super.validate((password) => {

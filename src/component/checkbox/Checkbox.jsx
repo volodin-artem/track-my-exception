@@ -18,4 +18,5 @@ function Checkbox(props) {
     </div>
   );
 }
+
 export default Checkbox;

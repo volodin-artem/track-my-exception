@@ -2,17 +2,17 @@ $main-color: rgb(46 46 46)
 $secondary-color: rgb(38 38 38)
 $light-gray: rgb(55 55 55)
 $text-main-color: rgb(156 163 175)
-$main-font: Inter,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol
-$shadow: 0px 13px 40px rgb(0 0 0/30%),0px 4px 4px rgb(0 0 0/20%)
+$main-font: Inter, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol
+$shadow: 0px 13px 40px rgb(0 0 0/30%), 0px 4px 4px rgb(0 0 0/20%)
 $mobile-width: 480px
 $error-color: #E60F1E
 $success-color: #82B139
-$zero-to-nine-numbers: 0,1,2,3,4,5,6,7,8,9
+$zero-to-nine-numbers: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 
-$types:(success: $success-color, error: $error-color)
+$types: (success: $success-color, error: $error-color)
 @mixin highlight($type)
   @each $tag, $color in $types
-    @if($type == $tag)
+    @if ($type == $tag)
       color: $color
 
 @each $type, $color in $types
@@ -36,7 +36,7 @@ $types:(success: $success-color, error: $error-color)
 
 @mixin highlight-input($type, $elem)
   @each $tag, $color in $types
-    @if($type == $tag)
+    @if ($type == $tag)
       $elem: (border: $color 1px solid)
 
 @mixin setCounterInType($type, $textBefore: "Section ")

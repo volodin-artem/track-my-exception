@@ -4,7 +4,6 @@ import { useQuery } from "react-query";
 import { useNavigate } from "react-router";
 import Logo from "../../component/logo/Logo.jsx";
 import DefaultButton from "../../component/button/DefaultButton.jsx";
-import user from "../../user.js";
 import configuration from "../../configuration.js";
 import { route as profileRoute } from "../user/main/MainUserPage.jsx";
 

@@ -36,7 +36,7 @@ function Welcome(props) {
             Don't waste expensive time checking server
             logs every time something happens.
           </>
-      )}
+        )}
         img={<img src="/image/main-plan.png" />}
       />
       <PreviewHolder
@@ -76,7 +76,7 @@ function Welcome(props) {
               No credit card needed & free plan available!
               Start with a free plan forever.
             </>
-        )}
+          )}
         />
         <PreviewHolder
           classes="green"
@@ -85,7 +85,7 @@ function Welcome(props) {
               <h1>Features.</h1>
               We got cool tracking system for your JS projects
             </>
-        )}
+          )}
         />
       </div>
     </>
