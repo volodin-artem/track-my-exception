@@ -4,7 +4,6 @@ import "./nav-bar.css";
 import Logo from "../logo/Logo.jsx";
 import DefaultButton from "../button/DefaultButton.jsx";
 import { route as fHref } from "../../pages/features/Features.jsx";
-import { route as pHref } from "../../pages/pricing/Pricing.jsx";
 import { route as cHref } from "../../pages/contact/Contact.jsx";
 import { route as dHref } from "../../pages/documentation/Documentation.jsx";
 import { route as userHref } from "../../pages/user/main/MainUserPage.jsx";
@@ -22,7 +21,6 @@ function NavBar(props) {
       <Logo />
       <div className="links-holder">
         <NavItem href={fHref.href} text="Features" />
-        <NavItem href={pHref.href} text="Pricing" />
         <NavItem href={dHref.href} text="Documentation" />
         <NavItem href={cHref.href} text="Contact" />
       </div>

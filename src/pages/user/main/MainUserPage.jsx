@@ -12,7 +12,7 @@ import configuration from "../../../configuration.js";
 
 function MainUserPage(props) {
   const [projectName, setProjectName] = useState("");
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(null);
   const [selectedProject, setSelectedProject] = useState({});
   const navigate = useNavigate();
   useEffect(() => {
@@ -29,7 +29,7 @@ function MainUserPage(props) {
 
   useEffect(() => {
     checkProjects();
-  }, [projects[0]?.Id]);
+  }, [projects?.[0]?.Id]);
 
   const {
     status, data, error, refetch,
@@ -109,17 +109,18 @@ function MainUserPage(props) {
           <Logo />
         </div>
         <div style={{ paddingTop: "1rem" }}>
-          {projects.map((item, index) => (
-            <DefaultButton
-              key={index}
-              text={item.Name}
-              classes={["project"]}
-              onclick={(e) => {
-                const selProject = projects.find((project) => project.Name === e.target.textContent);
-                setSelectedProject(() => selProject);
-              }}
-            />
-          ))}
+          {projects == null
+            ? <p className="def-size def-color def-family">Loading...</p> : projects.map((item, index) => (
+              <DefaultButton
+                key={index}
+                text={item.Name}
+                classes={["project"]}
+                onclick={(e) => {
+                  const selProject = projects.find((project) => project.Name === e.target.textContent);
+                  setSelectedProject(() => selProject);
+                }}
+              />
+            ))}
           <div className="flex justify-center">
             <DefaultButton
               text="Add new project"
