@@ -17,58 +17,22 @@ function Features(props) {
         <PreviewHolder
           text={(
             <div>
-              <h1>Intelligent error grouping</h1>
-              No wasted time
-              Muscula delivers all errors into your central dashboard, and gives you powerful search and sort capabilities.
-              No wasted time reading lines of a log for a single error.
-              Impress clients with your resolution speed. Muscula does the work; you get the credit.
-            </div>
-        )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
-        />
-        <PreviewHolder
-          text={(
-            <div>
-              <h1>Uptime Checks</h1>
-              Know Instantly When a Site Doesn’t Load
-              Use Muscula’s outstanding Uptime Check as a standalone or with our error logging function.
-              Know minute-by-minute whether a website or app is unavailable and FIX IT FAST! When a test fails,
-              you’ll receive an immediate email with the error notification.
-              Look smart and timely while Muscula’s Uptime Check does the hard work.
-            </div>
-        )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
-        />
-        <PreviewHolder
-          text={(
-            <div>
               <h1>Structural logging</h1>
-              Debug on production
-              Muscula allows you alongside the errors log also additional information like data user sent with request. You can view and search that data to check all errors related to user's request. Check our documentation for more information.
+              <p className="highlight-success">Debug on production</p>
+              We allows you alongside the errors log also additional information like data user sent with request. You can view and search that data to check all errors related to user's request. Check our documentation for more information.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img style={{ paddingTop: "2rem" }} src="https://lh4.googleusercontent.com/Zg0gp5kris7dUkvdA7VTsaMmJMMVKNNaIhZdiJDEllngBWiHsnip-XtD7FBxWwXcFZQe-9avKcx9OKly60k2sJliPSOiXEbTLlMQVteLrIJUBZiR7mBmufE5jGTcFpklX9BoA-6c" />}
         />
         <PreviewHolder
           text={(
             <div>
               <h1>No risk</h1>
-              Website or servers are safe
-              Muscula requires no changes to your code or a proxy, so your website or servers are safe.
-              Try Muscula risk-free →
+              <p className="highlight-success">Website or servers are safe</p>
+              We are requires no changes to your code or a proxy, so your website or servers are safe.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
-        />
-        <PreviewHolder
-          text={(
-            <div>
-              <h1>Expert support</h1>
-              We are fanatical about support
-              As fellow developers, we are passionate about an error-free user experience, and we want you to get the most out of your investment in Muscula and our services. We provide full support for our product, and our team of experts is poised to help resolve challenges and answer queries.
-            </div>
-          )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://images.ctfassets.net/c5bd0wqjc7v0/4Zbb6R21DzWs2ONq3mDABn/400b1c205dade66482f398245c4e6c4f/Setting_the_record_straight__Your_funds_are_safe_at_Coinbase_____and_always_will_be.png" />}
         />
         <PreviewHolder
           text={(
@@ -76,10 +40,10 @@ function Features(props) {
               <h1>
                 Multiple projects
               </h1>
-              As fellow developers, we are passionate about an error-free user experience, and we want you to get the most out of your investment in Muscula and our services. We provide full support for our product, and our team of experts is poised to help resolve challenges and answer queries.
+              We are passionate about an error-free user experience, and we want you to get the most out of your investment our service. We provide full support for our product, and we are is poised to help resolve challenges and answer queries.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://de.smartsheet.com/sites/default/files/ManageMultipleProjects-tile.jpg" />}
         />
         <PreviewHolder
           text={(
@@ -88,11 +52,10 @@ function Features(props) {
                 Blazing fast interface
               </h1>
               Faster than the blink of an eye
-              Muscula shows your errors in fewer than 100ms. Get rid of those logging systems that have overloaded, slow interfaces. Throttle into the future with Muscula.
-              Try Muscula now →
+              We are showing your errors in fewer than 100ms. Get rid of those logging systems that have overloaded, slow interfaces.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://cdn-icons-png.flaticon.com/512/4388/4388230.png" />}
         />
         <PreviewHolder
           text={(
@@ -104,7 +67,7 @@ function Features(props) {
               Create a log and paste the code fragment in your app or on the website.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://www.muscula.com/static/sixth_feature-e9ea82352bfe53126c99d401f55d3564.jpg" />}
         />
         <PreviewHolder
           text={(
@@ -116,20 +79,7 @@ function Features(props) {
               Works with every CMS, framework or site generator, including: Gatsby, WordPress, Wix, Bootstrap and SquareSpace. Great for ecommerce platforms such as Magento and WooCommerce.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
-        />
-        <PreviewHolder
-          text={(
-            <div>
-              <h1>
-                Use it for mobile
-              </h1>
-              Any JavaScript-based site
-              Android, iOS or nearly native platforms, such as PhoneGap, React Native or NativeScript.
-              Muscula for mobile →d WooCommerce.
-            </div>
-          )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://www.muscula.com/static/seventh_feature-1384388d2e89ea1385bde3c350006889.jpg" />}
         />
         <PreviewHolder
           text={(
@@ -141,20 +91,18 @@ function Features(props) {
               Compatible with Angular, React, Vue, Svelte, JQuery and many others.
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://www.muscula.com/static/ninth_feature-b281940a4f808d6c02141bde1078a377.jpg" />}
         />
         <PreviewHolder
           text={(
             <div>
               <h1>
-                Virtually all back-end languages
+                All back-end frameworks
               </h1>
-              C#, Java, PHP, Python and more
-              One centralized place to check all components.
-              Try Muscula for free →
+              Express, Backbone, NextJS and more!
             </div>
           )}
-          img={<img src="https://www.muscula.com/static/muscula_log_compare-d10f1eec2eff9bcefd67a1ecd61da943.gif" />}
+          img={<img src="https://dev-updates-uploads.s3.ap-south-1.amazonaws.com/1651161006094-JavaScript.jpg" />}
         />
       </div>
       <Footer />

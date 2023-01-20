@@ -42,9 +42,9 @@ function Welcome(props) {
       <PreviewHolder
         text={(
           <>
-            <h1>How it works.</h1>
+            <h1>How it works?</h1>
             {' '}
-            Check out documentation to learn how work with us
+            Check out documentation to learn how work with us.
           </>
         )}
         img={<img src="/image/documentation.png" />}
