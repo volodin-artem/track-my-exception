@@ -1,7 +1,7 @@
 function Fetty(apikey) {
   return {
     _errors: [],
-    _serverToPost: "http://localhost:3000/api/post/error",
+    _serverToPost: "https://trackmyexception.onrender.com/api/post/error",
     goTrack() {
       window.addEventListener("error", (evt) => {
         const error = (evt.error.message || "") + evt.error.stack;
@@ -17,4 +17,5 @@ function Fetty(apikey) {
     },
   };
 }
+
 module.exports = Fetty;

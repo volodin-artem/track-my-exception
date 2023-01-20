@@ -3,19 +3,12 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  devtool: 'eval-source-map',
-  mode: "development",
+  mode: "production",
   entry: "./src/index.jsx",
   output: {
     path: path.join(__dirname, '/public'),
     filename: "bundle.js",
     publicPath: "/",
-  },
-  devServer: {
-    historyApiFallback: true,
-    port: 1337,
-    open: true,
-    host: 'localhost',
   },
   plugins: [
     new HtmlWebpackPlugin({

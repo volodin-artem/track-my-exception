@@ -29,12 +29,6 @@ sequelize.sync().then(() => {
   console.log('SQL is connected');
 });
 app.use(express.static(path.join(__dirname, 'public')));
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS, POST, PUT');
-  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-  next();
-});
 app.get('/*', (req, res, next) => {
   if (req.path.includes('api')) {
     return next();
@@ -45,10 +39,6 @@ app.get('/*', (req, res, next) => {
 app.listen(port, () => console.log('Server is started'));
 
 app.get('/api/user/:userId', (req, res) => {
-  res.set({
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-  });
   const { userId } = req.params;
   User.findOne({
     where: {
@@ -147,5 +137,8 @@ app.get('/api/user', (req, res, next) => {
   }
 });
 app.get('/api/fetty.js', (req, res) => {
+  res.set({
+    "Access-Control-Allow-Origin": "*",
+  });
   res.send(Fetty.toString());
 });
